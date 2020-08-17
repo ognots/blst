@@ -66,7 +66,7 @@ fn main() {
     // Optimization level depends on whether or not --release is passed
     // or implied.
     let mut cc = cc::Build::new();
-    cc.flag_if_supported("-march=native")
+    cc.flag_if_supported("-D__ADX__")
         .flag_if_supported("-mno-avx") // avoid costly transitions
         .flag_if_supported("-Wno-unused-command-line-argument");
     if !cfg!(debug_assertions) {
