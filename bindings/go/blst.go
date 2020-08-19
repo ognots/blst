@@ -10,8 +10,9 @@
 
 package blst
 
-// #cgo CFLAGS: -I${SRCDIR}/.. -I${SRCDIR}/../../build -I${SRCDIR}/../../src -D__BLST_CGO__ -march=native
-// #cgo amd64 CFLAGS: -mno-avx
+// #cgo CFLAGS: -I${SRCDIR}/.. -I${SRCDIR}/../../build -I${SRCDIR}/../../src -D__BLST_CGO__
+// #cgo !amd64 CFLAGS: -march=native
+// #cgo amd64 CFLAGS: -mno-avx -D__ADX__
 // #include "blst.h"
 import "C"
 import (
